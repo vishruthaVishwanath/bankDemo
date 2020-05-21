@@ -1,0 +1,47 @@
+<div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+
+      <div>
+        <p>name: {{name}}</p>
+        <p> id: {{id}} </p>
+      </div>
+      
+        <div>
+            <button class='btn btn-primary' (click)="transfer()"> Transfer money</button>
+            <div *ngIf="transfermoney">
+              <form #transferFrom="ngForm" (ngSubmit)="moneytransfer(transferFrom)">
+                <label>amount</label>
+                <input type="number">
+                <br>
+                <label>to account</label>
+                <input type="text">
+                <button class='btn btn-primary' type="submit" (click)="moneytransfer(transferFrom)"> transfer now</button>|
+                <button class='btn btn-primary' (click)="transferCancel()"> cancel</button>
+                </form>
+            </div>
+            <div *ngIf="transactionSuccess">
+              <p>transaction successful</p>
+            </div>
+            <br><hr><br>
+            <button class='btn btn-primary' (click)="statement()">get mini statement</button>
+            
+            <div *ngIf="ministmt">
+              <p>mini ststement</p>
+            </div>
+
+          </div>
+          <hr>
+          <div>
+            <button class='btn btn-primary' (click)="onLogout()"> LogOut</button>
+
+          </div>
+
+
+
+
+          
+
+        
+      
+    </div>
+  </div>
